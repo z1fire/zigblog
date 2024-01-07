@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post - Zig Programming Tutorials Blog</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Override default background color */
+        body {
+            background-color: #f7f7f7; /* Light gray background */
+            font-family: 'sans-serif';
+        }
+        /* Update text color for better readability */
+        .text-dark {
+            color: #333; /* Dark gray text color */
+        }
+        /* Update the color of the header text */
+        .header-text {
+            color: #1a202c; /* Darker text color for the header */
+        }
+        /* Update the color of the navigation links */
+        .nav-link {
+            color: #1a202c; /* Darker text color for navigation links */
+        }
+        /* Update the color of the search bar text */
+        .search-bar::placeholder,
+        .search-bar {
+            color: #4a5568; /* Dark gray text color for search bar */
+        }
+        /* Update the color of the search button */
+        .search-button {
+            background-color: #f7a41d; /* Zig logo color for search button */
+            color: #fff; /* White text color for search button */
+        }
+        /* Update the color of the read more button */
+        .read-more-button {
+            background-color: #f7a41d; /* Zig logo color for read more button */
+            color: #fff; /* White text color for read more button */
+        }
+        /* Style the sidebar */
+        .sidebar {
+            background-color: transparent; /* Light gray sidebar background */
+        }
+        .sidebar-heading {
+            color: #4a5568; /* Dark gray heading text color */
+        }
+        .sidebar-category {
+            color: #1e40af; /* Blue category text color */
+        }
+        .sidebar-category:hover {
+            color: #1a202c; /* Darker category text color on hover */
+        }
+        .create-post-button {
+        background-color: #f7a41d; /* Zig logo color for button */
+        color: #fff; /* White text color for button */
+        }
+
+        /* Change the button color when hovered */
+        .create-post-button:hover {
+        background-color: #f7a41d; /* Zig logo color for button (keep it the same) */
+        color: #fff; /* White text color for button (keep it the same) */
+        }
+        
+
+
+
+        /* Custom Styles for Responsive Design */
+        @media (max-width: 767px) {
+            .lg\:hidden {
+                display: none !important;
+            }
+        }
+        @media (min-width: 768px) {
+            .hidden\:lg {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-f7a41d text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold header-text">Zig Tutorials</div>
+            <!-- Navigation Links -->
+            <ul class="hidden lg:flex space-x-4">
+                <li><a href="profile.html" class="nav-link hover:text-gray-300">Home</a></li>
+                <li><a href="#" class="nav-link hover:text-gray-300">Tutorials</a></li>
+                <li><a href="#" class="nav-link hover:text-gray-300">About</a></li>
+                <li><a href="signup.html" class="nav-link hover:text-gray-300">Sign Up</a></li>
+                <li><a href="login.html" class="nav-link hover:text-gray-300">Login</a></li>
+                <!-- Additional navigation links can be added here -->
+            </ul>
+            <!-- Hamburger Menu for Mobile -->
+            <div class="block lg:hidden">
+                <button id="mobile-menu-button" class="flex items-center px-3 py-2 border rounded text-f7a41d border-white hover:text-white hover:border-white">
+                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Menu</title>
+                        <path fill-rule="evenodd" d="M20 3H0V1h20v2zm0 6H0V7h20v2zm0 6H0v-2h20v2z" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="hidden lg:hidden" id="mobile-menu">
+        <ul class="flex flex-col items-center mt-4">
+            <li><a href="profile.html" class="nav-link hover:text-gray-300">Home</a></li>
+            <li><a href="#" class="nav-link hover:text-gray-300">Tutorials</a></li>
+            <li><a href="#" class="nav-link hover:text-gray-300">About</a></li>
+            <li><a href="signup.html" class="nav-link hover:text-gray-300">Sign Up</a></li>
+            <li><a href="login.html" class="nav-link hover:text-gray-300">Login</a></li>
+            
+            <!-- Additional navigation links can be added here -->
+        </ul>
+    </div>
+
+    <div class="flex-grow container mx-auto py-8 flex justify-center">
+      <!-- Sidebar with User Picture -->
+      <aside class="hidden lg:block w-1/4">
+          <div class="bg-white rounded shadow-md overflow-hidden mb-6">
+              <!-- Placeholder for user picture -->
+              <img src="images/defaultuserimage.png" alt="User Picture" class="w-full h-auto object-cover">
+            </div>
+
+            <!-- Section for Links and Progress -->
+            <div class="bg-white rounded shadow-md p-4 mb-6">
+              <!-- Links Section -->
+              <div class="mb-4">
+                  <h2 class="text-xl font-bold mb-2">My Links</h2>
+                  <ul class="text-gray-600">
+                      <li><a href="createpost.html" class="block py-1">Create Posts</a></li>
+                      <li><a href="#" class="block py-1">My Posts</a></li>
+                      <li><a href="#" class="block py-1">My Favorites</a></li>
+                  </ul>
+              </div>
+            <!-- Progress Bar for Zig Learning Pathway -->
+            <div class="mb-4">
+            <h2 class="text-xl font-bold mb-2">Zig Learning Pathway</h2>
+            <p class="text-gray-600 mb-2">Your Progress:</p>
+            <!-- Replace the width percentage with actual progress -->
+              <div class="bg-gray-300 h-4 rounded-md overflow-hidden">
+                <div class="bg-yellow-500 h-full" style="width: 50%;"></div>
+              </div>
+              <a href="pathway.html" class="block text-yellow-500 mt-2">Continue Learning</a>
+                </div>
+          </div>
+        </aside>
+
+      <!-- Main Content -->
+    <main class="flex-grow container mx-auto py-8 flex justify-center">
+      <!-- Form for creating a post -->
+      <form class="w-full lg:w-3/4 p-4 bg-white rounded shadow-md" action="#" method="POST">
+          <h1 class="text-3xl font-bold mb-4 text-center">Create a New Post</h1>
+          <!-- Title input -->
+          <div class="mb-4">
+              <label for="post-title" class="block mb-2">Title:</label>
+              <input type="text" id="post-title" name="post-title" class="w-full border rounded px-3 py-2" placeholder="Enter your post title" required>
+          </div>
+          <!-- Content input -->
+          <div class="mb-4">
+              <label for="post-content" class="block mb-2">Content:</label>
+              <textarea id="post-content" name="post-content" class="w-full border rounded px-3 py-2" placeholder="Write your post content" rows="8" required></textarea>
+          </div>
+          <!-- YouTube video embed input -->
+          <div class="mb-4">
+              <label for="youtube-link" class="block mb-2">YouTube Video Link:</label>
+              <input type="text" id="youtube-link" name="youtube-link" class="w-full border rounded px-3 py-2" placeholder="Paste your YouTube video link here">
+          </div>
+          <!-- Submit button -->
+          <div class="mb-4">
+              <button type="submit" class="mt-2 inline-block px-4 py-2 rounded hover:bg-yellow-500 transition duration-300 create-post-button">Create Post</button>
+          </div>
+      </form>
+  </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center py-4 mt-auto">
+        <p>&copy; 2024 Zig Tutorials Blog. All rights reserved.</p>
+    </footer>
+
+    <!-- Script to Toggle Mobile Menu -->
+    <script>
+        document.getElementById('mobile-menu-button').onclick = function () {
+            var mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu.style.display === 'block') {
+                mobileMenu.style.display = 'none';
+            } else {
+                mobileMenu.style.display = 'block';
+            }
+        };
+    </script>
+</body>
+
+</html>
