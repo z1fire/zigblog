@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Blog Post - Zig Programming Tutorials Blog</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Override default background color */
+        body {
+            background-color: #f7f7f7; /* Light gray background */
+            font-family: 'sans-serif';
+        }
+        /* Update text color for better readability */
+        .text-dark {
+            color: #333; /* Dark gray text color */
+        }
+        /* Update the color of the header text */
+        .header-text {
+            color: #1a202c; /* Darker text color for the header */
+        }
+        /* Update the color of the navigation links */
+        .nav-link {
+            color: #1a202c; /* Darker text color for navigation links */
+        }
+        /* Update the color of the search bar text */
+        .search-bar::placeholder,
+        .search-bar {
+            color: #4a5568; /* Dark gray text color for search bar */
+        }
+        /* Update the color of the search button */
+        .search-button {
+            background-color: #f7a41d; /* Zig logo color for search button */
+            color: #fff; /* White text color for search button */
+        }
+        /* Update the color of the read more button */
+        .read-more-button {
+            background-color: #f7a41d; /* Zig logo color for read more button */
+            color: #fff; /* White text color for read more button */
+        }
+        /* Style the sidebar */
+        .sidebar {
+            background-color: transparent; /* Light gray sidebar background */
+        }
+        .sidebar-heading {
+            color: #4a5568; /* Dark gray heading text color */
+        }
+        .sidebar-category {
+            color: #1e40af; /* Blue category text color */
+        }
+        .sidebar-category:hover {
+            color: #1a202c; /* Darker category text color on hover */
+        }
+
+        /* Custom Styles for Responsive Design */
+        @media (max-width: 767px) {
+            .lg\:hidden {
+                display: none !important;
+            }
+        }
+        @media (min-width: 768px) {
+            .hidden\:lg {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-f7a41d text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold header-text">Zig Tutorials</div>
+            <!-- Navigation Links -->
+            <ul class="hidden lg:flex space-x-4">
+                <li><a href="profile.html" class="nav-link hover:text-gray-300">Home</a></li>
+                <li><a href="#" class="nav-link hover:text-gray-300">Tutorials</a></li>
+                <li><a href="#" class="nav-link hover:text-gray-300">About</a></li>
+                <li><a href="signup.html" class="nav-link hover:text-gray-300">Sign Up</a></li>
+                <li><a href="login.html" class="nav-link hover:text-gray-300">Login</a></li>
+                <!-- Additional navigation links can be added here -->
+            </ul>
+            <!-- Hamburger Menu for Mobile -->
+            <div class="block lg:hidden">
+                <button id="mobile-menu-button" class="flex items-center px-3 py-2 border rounded text-f7a41d border-white hover:text-white hover:border-white">
+                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Menu</title>
+                        <path fill-rule="evenodd" d="M20 3H0V1h20v2zm0 6H0V7h20v2zm0 6H0v-2h20v2z" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div class="flex-grow container mx-auto py-8 flex justify-center">
+        <!-- Sidebar with User Picture -->
+        <aside class="hidden lg:block w-1/4">
+            <div class="bg-white rounded shadow-md overflow-hidden mb-6">
+                <!-- Placeholder for user picture -->
+                <img src="images/defaultuserimage.png" alt="User Picture" class="w-full h-auto object-cover">
+              </div>
+  
+              <!-- Section for Links and Progress -->
+              <div class="bg-white rounded shadow-md p-4 mb-6">
+                <!-- Links Section -->
+                <div class="mb-4">
+                    <h2 class="text-xl font-bold mb-2">My Links</h2>
+                    <ul class="text-gray-600">
+                        <li><a href="createpost.html" class="block py-1">Create Posts</a></li>
+                        <li><a href="#" class="block py-1">My Posts</a></li>
+                        <li><a href="#" class="block py-1">My Favorites</a></li>
+                        <li><a href="#" class="block py-1">My Comments</a></li>
+                    </ul>
+                </div>
+              <!-- Progress Bar for Zig Learning Pathway -->
+              <div class="mb-4">
+              <h2 class="text-xl font-bold mb-2">Zig Learning Pathway</h2>
+              <p class="text-gray-600 mb-2">Your Progress:</p>
+              <!-- Replace the width percentage with actual progress -->
+                <div class="bg-gray-300 h-4 rounded-md overflow-hidden">
+                  <div class="bg-yellow-500 h-full" style="width: 50%;"></div>
+                </div>
+                <a href="pathway.html" class="block text-yellow-500 mt-2">Continue Learning</a>
+                  </div>
+            </div>
+          </aside>
+    <!-- Blog Post Content -->
+    <div class="container mx-auto py-8">
+        <div class="w-full lg:w-3/4 mx-auto">
+            <!-- Blog Post -->
+            <article class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <!-- Blog Post Title -->
+                <h1 class="text-3xl font-bold mb-4">Sample Blog Post Title</h1>
+                
+                <!-- Blog Post Image -->
+                <img src="images/sample_blog_image.jpg" alt="Blog Post Image" class="w-full h-auto mb-4 rounded-md">
+
+                <!-- Blog Post Content -->
+                <p class="text-lg mb-4">
+                    This is a sample blog post content. You can add your detailed content, tutorials, descriptions, etc., here.
+                </p>
+
+                <!-- Comments Section -->
+                <div class="border-t-2 border-gray-200 pt-6 mt-6">
+                    <h2 class="text-xl font-semibold mb-4">Comments</h2>
+
+                    <!-- Individual Comment -->
+                    <div class="flex items-start mb-4">
+                        <!-- Vote Section (Upvote and Downvote buttons) -->
+                        <div class="flex flex-col items-center justify-center mr-4">
+                            <button class="text-xl">&#9650;</button>
+                            <span class="text-lg font-bold">10</span>
+                            <button class="text-xl">&#9660;</button>
+                        </div>
+
+                        <!-- Comment Content -->
+                        <div class="flex-1">
+                            <p class="text-gray-700 mb-2">This is a sample comment. Feel free to replace it with your own comments.</p>
+                            <div class="flex items-center">
+                                <span class="text-sm text-gray-500 mr-2">Posted by John Doe</span>
+                                <button class="text-sm text-blue-500">Reply</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add more comments as needed -->
+                    <!-- ... -->
+
+                    <!-- Comment Form -->
+                    <form class="mt-6">
+                        <h3 class="text-lg font-semibold mb-2">Leave a Comment</h3>
+                        <textarea class="w-full rounded border-gray-300 focus:border-f7a41d focus:ring focus:ring-f7a41d focus:ring-opacity-50 mb-2" rows="4" placeholder="Write your comment here..."></textarea>
+                        <input type="text" class="w-full rounded border-gray-300 focus:border-f7a41d focus:ring focus:ring-f7a41d focus:ring-opacity-50 mb-2" placeholder="Your Name">
+                        <button type="submit" class="bg-f7a41d text-white py-2 px-4 rounded hover:bg-yellow-500 transition duration-300">Post Comment</button>
+                    </form>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center py-4 mt-auto">
+        <p>&copy; 2024 Zig Tutorials Blog. All rights reserved.</p>
+    </footer>
+
+    <!-- Script to Toggle Mobile Menu -->
+    <script>
+        document.getElementById('mobile-menu-button').onclick = function () {
+            var mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu.style.display === 'block') {
+                mobileMenu.style.display = 'none';
+            } else {
+                mobileMenu.style.display = 'block';
+            }
+        };
+    </script>
+</body>
+
+</html>
