@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with Zig - Zig Tutorials Blog</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Additional styling for Udemy-like appearance */
+        body {
+            background-color: #f7f7f7; /* Light gray background */
+            font-family: 'sans-serif';
+        }
+        /* Update text color for better readability */
+        .text-dark {
+            color: #333; /* Dark gray text color */
+        }
+        /* Update the color of the header text */
+        .header-text {
+            color: #1a202c; /* Darker text color for the header */
+        }
+        /* Update the color of the navigation links */
+        .nav-link {
+            color: #1a202c; /* Darker text color for navigation links */
+        }
+        .course-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+        }
+
+        .course-content {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .course-sidebar {
+            background-color: #f3f4f6;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .course-title {
+            font-size: 2xl;
+            font-weight: bold;
+            color: #1a202c;
+        }
+
+        .course-description {
+            color: #4a5568;
+            margin-top: 10px;
+        }
+
+        .video-placeholder {
+            background-color: #f7f7f7;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .example-placeholder {
+            background-color: #f7f7f7;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .enroll-button {
+            background-color: #f7a41d;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        /* Include your custom styles here if needed */
+    </style>
+</head>
+
+<body class="font-sans antialiased flex flex-col min-h-screen">
+     <!-- Navbar -->
+     <nav class="bg-f7a41d text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold header-text">Zig Tutorials</div>
+            <!-- Navigation Links -->
+            <ul class="hidden lg:flex space-x-4">
+                <li><a href="#" class="nav-link hover:text-gray-300">Home</a></li>
+                <li><a href="#" class="nav-link hover:text-gray-300">Tutorials</a></li>
+                <li><a href="#" class="nav-link hover:text-gray-300">About</a></li>
+                <li><a href="signup.html" class="nav-link hover:text-gray-300">Sign Up</a></li>
+                <li><a href="login.html" class="nav-link hover:text-gray-300">Login</a></li>
+                <!-- Additional navigation links can be added here -->
+            </ul>
+            <!-- Hamburger Menu for Mobile -->
+            <div class="block lg:hidden">
+                <button id="mobile-menu-button" class="flex items-center px-3 py-2 border rounded text-f7a41d border-white hover:text-white hover:border-white">
+                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Menu</title>
+                        <path fill-rule="evenodd" d="M20 3H0V1h20v2zm0 6H0V7h20v2zm0 6H0v-2h20v2z" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <!-- ... (unchanged) ... -->
+
+    <!-- Main Content with Sidebar -->
+    <div class="flex-grow container mx-auto py-8 flex justify-center">
+        <!-- Main Content -->
+        <div class="w-full p-4 course-container">
+            <!-- Course Content -->
+            <div class="course-content">
+                <!-- Updated header text color -->
+                <h1 class="text-3xl font-bold mb-4 header-text text-center course-title">Getting Started with Zig</h1>
+                <p class="text-lg mb-6 text-center course-description">Learn the basics of Zig programming language and set up your environment. Start your journey into Zig programming with this comprehensive course.</p>
+
+                <!-- Video Placeholder 1 -->
+                <div class="video-placeholder">
+                    <h2 class="text-xl font-bold mb-2">Video 2: Installation</h2>
+                    <p class="text-gray-600">Installing Zig.</p>
+                    <!-- Replace the following line with your YouTube video embed code -->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/MMtvGA1YhW4?si=kc_J75qNffqpUyQ6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>                </div>
+
+                <!-- Add more Video and Example Placeholders as needed -->
+
+                <!-- Enroll Button -->
+                <a href="#" class="enroll-button">Continue Learning</a>
+            </div>
+
+            <!-- Course Sidebar -->
+        <div class="hidden lg:block course-sidebar">
+            <!-- Additional information, links, or resources related to the course can be added here -->
+            <h2 class="text-xl font-bold mb-2">Course Resources</h2>
+            <ul class="list-disc pl-4">
+                <li><a href="#section-1">Section 1: Introduction</a></li>
+                <li><a href="#section-2">Section 2: Setting Up Environment</a></li>
+                <li><a href="#section-3">Section 3: Basic Zig Concepts</a></li>
+            </ul>
+
+            <h2 class="text-xl font-bold mb-2 mt-4">Instructor</h2>
+            <p class="text-gray-600">Meet your instructor: John Doe. With over 10 years of experience in Zig programming, John will guide you through this course.</p>
+
+            <h2 class="text-xl font-bold mb-2 mt-4">Recommended Reading</h2>
+            <p class="text-gray-600">Check out these recommended books to complement your learning:</p>
+            <ul class="list-disc pl-4">
+                <li><a href="https://zig.guide/getting-started/installation">"Zig.Guide Installation"</a></li>
+                <li><a href="#book-2">"Mastering Zig Language"</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center py-4 mt-auto">
+        <p>&copy; 2024 Zig Tutorials Blog. All rights reserved.</p>
+    </footer>
+
+    <!-- Script to Toggle Mobile Menu -->
+    <script>
+        document.getElementById('mobile-menu-button').onclick = function () {
+            var mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu.style.display === 'block') {
+                mobileMenu.style.display = 'none';
+            } else {
+                mobileMenu.style.display = 'block';
+            }
+        };
+    </script>
+</body>
+
+</html>
