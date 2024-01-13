@@ -175,29 +175,20 @@
 
         <!-- Main Content -->
         <main class="main-content">
-            <!-- Form for creating a post -->
-            <form class="w-full p-4 bg-white rounded shadow-md" action="#" method="POST">
-                <h1 class="text-3xl font-bold mb-4 text-center">Create a New Post</h1>
-                <!-- Title input -->
-                <div class="mb-4">
-                    <label for="post-title" class="block mb-2">Title:</label>
-                    <input type="text" id="post-title" name="post-title" class="w-full border rounded px-3 py-2" placeholder="Enter your post title" required>
+            <div class="vote-container">
+                <h1 class="text-3xl font-bold mb-4 header-text text-center">Vote and Create Topics</h1>
+
+                <!-- Sample Topic -->
+                <div class="topic">
+                    <span>Create a CLI Tool</span>
+                    <button class="vote-btn">Vote</button>
                 </div>
-                <!-- Content input -->
-                <div class="mb-4">
-                    <label for="post-content" class="block mb-2">Content:</label>
-                    <textarea id="post-content" name="post-content" class="w-full border rounded px-3 py-2" placeholder="Write your post content" rows="8" required></textarea>
+
+                <!-- Sample Topic -->
+                <div class="topic">
+                    <span>Create a Web Backend</span>
+                    <button class="vote-btn">Vote</button>
                 </div>
-                <!-- YouTube video embed input -->
-                <div class="mb-4">
-                    <label for="youtube-link" class="block mb-2">YouTube Video Link:</label>
-                    <input type="text" id="youtube-link" name="youtube-link" class="w-full border rounded px-3 py-2" placeholder="Paste your YouTube video link here">
-                </div>
-                <!-- Submit button -->
-                <div class="mb-4">
-                    <button type="submit" class="mt-2 inline-block px-4 py-2 rounded hover:bg-yellow-500 transition duration-300 create-post-button">Create Post</button>
-                </div>
-            </form>
         </main>
 
         <!-- Sidebar for Create New Topic -->
