@@ -236,11 +236,23 @@
                 <!-- Add more topics and voting buttons as needed -->
 
                 <!-- Topic Creation Form -->
-                <form action="#" method="post" class="topic-form">
-                    <label for="newTopic">Create New Topic:</label>
-                    <input type="text" id="newTopic" name="newTopic" class="tag-input" placeholder="Enter your new topic" required>
-                    <button type="submit" class="vote-btn">Submit Topic</button>
-                </form>
+<form action="#" method="post" class="topic-form">
+    <label for="newTopic">Create New Topic:</label>
+    <input type="text" id="newTopic" name="newTopic" class="tag-input" placeholder="Enter your new topic" required>
+
+    <!-- Category Selection -->
+    <div class="mb-4">
+        <label for="category" class="block mb-2">Select Category:</label>
+        <select id="category" name="category" class="w-full border rounded px-3 py-2" required>
+            <option value="cli">CLI Tools</option>
+            <option value="web">Web Development</option>
+            <!-- Add more categories as needed -->
+        </select>
+    </div>
+
+    <button type="submit" class="vote-btn">Submit Topic</button>
+</form>
+
             </div>
         </main>
     </div>
