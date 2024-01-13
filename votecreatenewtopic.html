@@ -86,6 +86,42 @@
             background-color: #f7a41d; /* Zig logo color for button (keep it the same) */
             color: #fff; /* White text color for button (keep it the same) */
         }
+        /* Voting Page Styles */
+        .vote-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .topic {
+            border: 1px solid #e2e8f0;
+            margin-bottom: 10px;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .topic span {
+            flex-grow: 1;
+        }
+
+        .vote-btn {
+            background-color: #f7a41d;
+            color: #fff;
+            padding: 8px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .vote-btn:hover {
+            background-color: #e29100;
+        }
 
         /* Custom Styles for Responsive Design */
         @media (max-width: 767px) {
