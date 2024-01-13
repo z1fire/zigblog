@@ -172,6 +172,39 @@
               <!-- Add more blog posts as needed -->
           </div>
       </div>
+        <!-- Sidebar for Create New Topic -->
+        <aside class="create-post-form">
+            <form class="bg-white rounded shadow-md p-4" action="#" method="POST">
+                <h2 class="text-xl font-bold mb-4">Create New Topic</h2>
+
+                <!-- Title input -->
+                <div class="mb-4">
+                    <label for="newTopicTitle" class="block mb-2">Title:</label>
+                    <input type="text" id="newTopicTitle" name="newTopicTitle" class="w-full border rounded px-3 py-2" placeholder="Enter the title of your topic" required>
+                </div>
+
+                <!-- Description input -->
+                <div class="mb-4">
+                    <label for="newTopicDescription" class="block mb-2">Description:</label>
+                    <textarea id="newTopicDescription" name="newTopicDescription" class="w-full border rounded px-3 py-2" placeholder="Enter a brief description of your topic" rows="4" required></textarea>
+                </div>
+
+                <!-- Category Selection -->
+                <div class="mb-4">
+                    <label for="newTopicCategory" class="block mb-2">Select Category:</label>
+                    <select id="newTopicCategory" name="newTopicCategory" class="w-full border rounded px-3 py-2" required>
+                        <option value="cli">CLI Tools</option>
+                        <option value="web">Web Development</option>
+                        <!-- Add more categories as needed -->
+                    </select>
+                </div>
+
+                <!-- Submit Topic Button -->
+                <div class="mb-4">
+                    <button type="submit" class="w-full inline-block px-4 py-2 rounded hover:bg-yellow-500 transition duration-300 create-post-button">Submit Topic</button>
+                </div>
+            </form>
+        </aside>
   </div>
 
 
