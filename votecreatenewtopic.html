@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voting - Zig Programming Tutorials Blog</title>
+    <title>Create Post - Zig Programming Tutorials Blog</title>
     <!-- Include Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
@@ -13,45 +13,73 @@
             background-color: #f7f7f7; /* Light gray background */
             font-family: 'sans-serif';
         }
+
         /* Update text color for better readability */
         .text-dark {
             color: #333; /* Dark gray text color */
         }
+
         /* Update the color of the header text */
         .header-text {
             color: #1a202c; /* Darker text color for the header */
         }
+
         /* Update the color of the navigation links */
         .nav-link {
             color: #1a202c; /* Darker text color for navigation links */
         }
+
         /* Update the color of the search bar text */
         .search-bar::placeholder,
         .search-bar {
             color: #4a5568; /* Dark gray text color for search bar */
         }
+
         /* Update the color of the search button */
         .search-button {
             background-color: #f7a41d; /* Zig logo color for search button */
             color: #fff; /* White text color for search button */
         }
+
         /* Update the color of the read more button */
         .read-more-button {
             background-color: #f7a41d; /* Zig logo color for read more button */
             color: #fff; /* White text color for read more button */
         }
+
         /* Style the sidebar */
         .sidebar {
-            background-color: transparent; /* Light gray sidebar background */
+            width: 25%; /* Adjust the width as needed */
+            min-width: 200px; /* Set a minimum width */
+            border-left: 1px solid #ccc; /* Add a border on the left */
+            padding: 20px;
         }
+
+        .main-content {
+            width: 75%; /* Adjust the width accordingly */
+        }
+
         .sidebar-heading {
             color: #4a5568; /* Dark gray heading text color */
         }
+
         .sidebar-category {
             color: #1e40af; /* Blue category text color */
         }
+
         .sidebar-category:hover {
             color: #1a202c; /* Darker category text color on hover */
+        }
+
+        .create-post-button {
+            background-color: #f7a41d; /* Zig logo color for button */
+            color: #fff; /* White text color for button */
+        }
+
+        /* Change the button color when hovered */
+        .create-post-button:hover {
+            background-color: #f7a41d; /* Zig logo color for button (keep it the same) */
+            color: #fff; /* White text color for button (keep it the same) */
         }
 
         /* Custom Styles for Responsive Design */
@@ -60,86 +88,11 @@
                 display: none !important;
             }
         }
+
         @media (min-width: 768px) {
             .hidden\:lg {
                 display: none !important;
             }
-        }
-
-        /* Voting Page Styles */
-        .vote-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .topic {
-            border: 1px solid #e2e8f0;
-            margin-bottom: 10px;
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .topic span {
-            flex-grow: 1;
-        }
-
-        .vote-btn {
-            background-color: #f7a41d;
-            color: #fff;
-            padding: 8px 15px;
-            border: none;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-
-        .vote-btn:hover {
-            background-color: #e29100;
-        }
-
-        .topic-form {
-            margin-top: 20px;
-            display: flex;
-            align-items: center;
-        }
-
-        .topic-form label {
-            margin-right: 10px;
-            font-weight: bold;
-        }
-
-        .topic-form input {
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            flex-grow: 1;
-        }
-
-        .topic-form button {
-            background-color: #1e40af;
-            color: #fff;
-            padding: 8px 15px;
-            border: none;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-
-        .topic-form button:hover {
-            background-color: #1c366b;
-        }
-
-        .tag-input {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
         }
     </style>
 </head>
@@ -178,98 +131,71 @@
             <li><a href="#" class="nav-link hover:text-gray-300">About</a></li>
             <li><a href="signup.html" class="nav-link hover:text-gray-300">Sign Up</a></li>
             <li><a href="login.html" class="nav-link hover:text-gray-300">Login</a></li>
-            
             <!-- Additional navigation links can be added here -->
         </ul>
     </div>
 
-    <!-- Main Content -->
     <div class="flex-grow container mx-auto py-8 flex justify-center">
         <!-- Sidebar with User Picture -->
-        <aside class="hidden lg:block w-1/4">
-            <div class="bg-white rounded shadow-md overflow-hidden mb-6">
-                <!-- Placeholder for user picture -->
-                <img src="images/defaultuserimage.png" alt="User Picture" class="w-full h-auto object-cover">
-            </div>
+        <aside class="hidden lg:block w-1/4 sidebar">
+            <!-- Create New Topic Form -->
+            <form action="#" method="post">
+                <h2 class="text-3xl font-bold mb-4 text-center">Create New Topic</h2>
 
-            <!-- Section for Links and Progress -->
-            <div class="bg-white rounded shadow-md p-4 mb-6">
-                <!-- Links Section -->
+                <!-- Title input -->
                 <div class="mb-4">
-                    <h2 class="text-xl font-bold mb-2">My Links</h2>
-                    <ul class="text-gray-600">
-                        <li><a href="createpost.html" class="block py-1">Create Posts</a></li>
-                        <li><a href="#" class="block py-1">My Posts</a></li>
-                        <li><a href="#" class="block py-1">My Favorites</a></li>
-                    </ul>
+                    <label for="newTopicTitle" class="block mb-2">Title:</label>
+                    <input type="text" id="newTopicTitle" name="newTopicTitle" class="w-full border rounded px-3 py-2" placeholder="Enter your topic title" required>
                 </div>
-                <!-- Progress Bar for Zig Learning Pathway -->
+
+                <!-- Description input -->
                 <div class="mb-4">
-                    <h2 class="text-xl font-bold mb-2">Zig Learning Pathway</h2>
-                    <p class="text-gray-600 mb-2">Your Progress:</p>
-                    <!-- Replace the width percentage with actual progress -->
-                    <div class="bg-gray-300 h-4 rounded-md overflow-hidden">
-                        <div class="bg-yellow-500 h-full" style="width: 50%;"></div>
-                    </div>
-                    <a href="pathway.html" class="block text-yellow-500 mt-2">Continue Learning</a>
+                    <label for="newTopicDescription" class="block mb-2">Description:</label>
+                    <textarea id="newTopicDescription" name="newTopicDescription" class="w-full border rounded px-3 py-2" placeholder="Enter a brief description of your topic" rows="4" required></textarea>
                 </div>
-            </div>
+
+                <!-- Category Selection -->
+                <div class="mb-4">
+                    <label for="newTopicCategory" class="block mb-2">Select Category:</label>
+                    <select id="newTopicCategory" name="newTopicCategory" class="w-full border rounded px-3 py-2" required>
+                        <option value="cli">CLI Tools</option>
+                        <option value="web">Web Development</option>
+                        <!-- Add more categories as needed -->
+                    </select>
+                </div>
+
+                <!-- Submit Topic Button -->
+                <div class="mb-4">
+                    <button type="submit" class="w-full inline-block px-4 py-2 rounded hover:bg-yellow-500 transition duration-300 create-post-button">Submit Topic</button>
+                </div>
+            </form>
         </aside>
 
-        <!-- Voting Section -->
-        <main class="w-full lg:w-3/4 p-4">
-            <div class="vote-container">
-                <h1 class="text-3xl font-bold mb-4 header-text text-center">Vote and Create Topics</h1>
-
-                <!-- Sample Topic -->
-                <div class="topic">
-                    <span>Create a CLI Tool</span>
-                    <button class="vote-btn">Vote</button>
+        <!-- Main Content -->
+        <main class="flex-grow container mx-auto py-8 flex justify-center main-content">
+            <!-- Form for creating a post -->
+            <form class="w-full lg:w-3/4 p-4 bg-white rounded shadow-md" action="#" method="POST">
+                <h1 class="text-3xl font-bold mb-4 text-center">Create a New Post</h1>
+                <!-- Title input -->
+                <div class="mb-4">
+                    <label for="post-title" class="block mb-2">Title:</label>
+                    <input type="text" id="post-title" name="post-title" class="w-full border rounded px-3 py-2" placeholder="Enter your post title" required>
                 </div>
-
-                <!-- Sample Topic -->
-                <div class="topic">
-                    <span>Create a Web Backend</span>
-                    <button class="vote-btn">Vote</button>
+                <!-- Content input -->
+                <div class="mb-4">
+                    <label for="post-content" class="block mb-2">Content:</label>
+                    <textarea id="post-content" name="post-content" class="w-full border rounded px-3 py-2" placeholder="Write your post content" rows="8" required></textarea>
                 </div>
-
-                <!-- Add more topics and voting buttons as needed -->
-
-                <!-- Topic Creation Form -->
-<form action="#" method="post" class="w-full lg:w-3/4 p-4 bg-white rounded shadow-md">
-    <h2 class="text-3xl font-bold mb-4 text-center">Create New Topic</h2>
-
-    <!-- Title input -->
-    <div class="mb-4">
-        <label for="newTopicTitle" class="block mb-2">Title:</label>
-        <input type="text" id="newTopicTitle" name="newTopicTitle" class="w-full border rounded px-3 py-2" placeholder="Enter your topic title" required>
-    </div>
-
-    <!-- Description input -->
-    <div class="mb-4">
-        <label for="newTopicDescription" class="block mb-2">Description:</label>
-        <textarea id="newTopicDescription" name="newTopicDescription" class="w-full border rounded px-3 py-2" placeholder="Enter a brief description of your topic" rows="4" required></textarea>
-    </div>
-
-    <!-- Category Selection -->
-    <div class="mb-4">
-        <label for="newTopicCategory" class="block mb-2">Select Category:</label>
-        <select id="newTopicCategory" name="newTopicCategory" class="w-full border rounded px-3 py-2" required>
-            <option value="cli">CLI Tools</option>
-            <option value="web">Web Development</option>
-            <!-- Add more categories as needed -->
-        </select>
-    </div>
-
-    <!-- Submit Topic Button -->
-    <div class="mb-4">
-        <button type="submit" class="w-full inline-block px-4 py-2 rounded hover:bg-yellow-500 transition duration-300 create-post-button">Submit Topic</button>
-    </div>
-</form>
-
-
-
-            </div>
+                <!-- YouTube video embed input -->
+                <div class="mb-4">
+                    <label for="youtube-link" class="block mb-2">YouTube Video Link:</label>
+                    <input type="text" id="youtube-link" name="youtube-link" class="w-full border rounded px-3 py-2" placeholder="Paste your YouTube video link here">
+                </div>
+                <!-- Submit button -->
+                <div class="mb-4">
+                    <button type="submit" class="mt-2 inline-block px-4 py-2 rounded hover:bg-yellow-500 transition duration-300 create-post-button">Create Post</button>
+                </div>
+            </form>
         </main>
     </div>
 
@@ -292,3 +218,4 @@
 </body>
 
 </html>
+
