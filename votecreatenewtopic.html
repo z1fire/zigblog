@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Post - Zig Programming Tutorials Blog</title>
+    <title>Zig Programming Tutorials Blog</title>
     <!-- Include Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
@@ -59,7 +59,7 @@
             width: 50%; /* Adjust the width accordingly */
         }
 
-        .create-post-form {
+        .voting-sidebar {
             width: 25%;
             padding: 20px;
         }
@@ -74,17 +74,6 @@
 
         .sidebar-category:hover {
             color: #1a202c; /* Darker category text color on hover */
-        }
-
-        .create-post-button {
-            background-color: #f7a41d; /* Zig logo color for button */
-            color: #fff; /* White text color for button */
-        }
-
-        /* Change the button color when hovered */
-        .create-post-button:hover {
-            background-color: #f7a41d; /* Zig logo color for button (keep it the same) */
-            color: #fff; /* White text color for button (keep it the same) */
         }
 
         /* Custom Styles for Responsive Design */
@@ -175,63 +164,25 @@
 
         <!-- Main Content -->
         <main class="main-content">
-            <!-- Form for creating a post -->
-            <form class="w-full p-4 bg-white rounded shadow-md" action="#" method="POST">
-                <h1 class="text-3xl font-bold mb-4 text-center">Create a New Post</h1>
-                <!-- Title input -->
-                <div class="mb-4">
-                    <label for="post-title" class="block mb-2">Title:</label>
-                    <input type="text" id="post-title" name="post-title" class="w-full border rounded px-3 py-2" placeholder="Enter your post title" required>
-                </div>
-                <!-- Content input -->
-                <div class="mb-4">
-                    <label for="post-content" class="block mb-2">Content:</label>
-                    <textarea id="post-content" name="post-content" class="w-full border rounded px-3 py-2" placeholder="Write your post content" rows="8" required></textarea>
-                </div>
-                <!-- YouTube video embed input -->
-                <div class="mb-4">
-                    <label for="youtube-link" class="block mb-2">YouTube Video Link:</label>
-                    <input type="text" id="youtube-link" name="youtube-link" class="w-full border rounded px-3 py-2" placeholder="Paste your YouTube video link here">
-                </div>
-                <!-- Submit button -->
-                <div class="mb-4">
-                    <button type="submit" class="mt-2 inline-block px-4 py-2 rounded hover:bg-yellow-500 transition duration-300 create-post-button">Create Post</button>
-                </div>
-            </form>
+            <!-- Your main content goes here -->
+            <h1>Main Content</h1>
         </main>
 
-        <!-- Sidebar for Create New Topic -->
-        <aside class="create-post-form">
-            <form class="bg-white rounded shadow-md p-4" action="#" method="POST">
-                <h2 class="text-xl font-bold mb-4">Create New Topic</h2>
-
-                <!-- Title input -->
-                <div class="mb-4">
-                    <label for="newTopicTitle" class="block mb-2">Title:</label>
-                    <input type="text" id="newTopicTitle" name="newTopicTitle" class="w-full border rounded px-3 py-2" placeholder="Enter the title of your topic" required>
-                </div>
-
-                <!-- Description input -->
-                <div class="mb-4">
-                    <label for="newTopicDescription" class="block mb-2">Description:</label>
-                    <textarea id="newTopicDescription" name="newTopicDescription" class="w-full border rounded px-3 py-2" placeholder="Enter a brief description of your topic" rows="4" required></textarea>
-                </div>
-
-                <!-- Category Selection -->
-                <div class="mb-4">
-                    <label for="newTopicCategory" class="block mb-2">Select Category:</label>
-                    <select id="newTopicCategory" name="newTopicCategory" class="w-full border rounded px-3 py-2" required>
-                        <option value="cli">CLI Tools</option>
-                        <option value="web">Web Development</option>
-                        <!-- Add more categories as needed -->
-                    </select>
-                </div>
-
-                <!-- Submit Topic Button -->
-                <div class="mb-4">
-                    <button type="submit" class="w-full inline-block px-4 py-2 rounded hover:bg-yellow-500 transition duration-300 create-post-button">Submit Topic</button>
-                </div>
-            </form>
+        <!-- Voting Sidebar -->
+        <aside class="voting-sidebar">
+            <!-- Voting and topic-related content goes here -->
+            <h2 class="text-xl font-bold mb-4">Vote on Topics</h2>
+            <!-- Example content, replace with your own -->
+            <div class="mb-4">
+                <h3 class="text-lg font-bold mb-2">Topic 1</h3>
+                <p>Description of Topic 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <!-- Add voting buttons or any other relevant content -->
+            </div>
+            <div class="mb-4">
+                <h3 class="text-lg font-bold mb-2">Topic 2</h3>
+                <p>Description of Topic 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <!-- Add voting buttons or any other relevant content -->
+            </div>
         </aside>
     </div>
 
