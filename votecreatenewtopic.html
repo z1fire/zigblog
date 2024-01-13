@@ -4,14 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zig Programming Tutorials Blog</title>
+    <title>Voting - Zig Programming Tutorials Blog</title>
     <!-- Include Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
-    <!-- Add any additional styles specific to the new page -->
     <style>
-        /* Custom styles for the new page */
-      body {
+        /* Override default background color */
+        body {
             background-color: #f7f7f7; /* Light gray background */
             font-family: 'sans-serif';
         }
@@ -67,6 +65,8 @@
                 display: none !important;
             }
         }
+
+        /* Voting Page Styles */
         .vote-container {
             max-width: 800px;
             margin: 0 auto;
@@ -134,6 +134,13 @@
         .topic-form button:hover {
             background-color: #1c366b;
         }
+
+        .tag-input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
     </style>
 </head>
 
@@ -176,47 +183,44 @@
         </ul>
     </div>
 
+    <!-- Main Content -->
     <div class="flex-grow container mx-auto py-8 flex justify-center">
         <!-- Sidebar with User Picture -->
-      <aside class="hidden lg:block w-1/4">
-          <div class="bg-white rounded shadow-md overflow-hidden mb-6">
-              <!-- Placeholder for user picture -->
-              <img src="images/defaultuserimage.png" alt="User Picture" class="w-full h-auto object-cover">
+        <aside class="hidden lg:block w-1/4">
+            <div class="bg-white rounded shadow-md overflow-hidden mb-6">
+                <!-- Placeholder for user picture -->
+                <img src="images/defaultuserimage.png" alt="User Picture" class="w-full h-auto object-cover">
             </div>
 
             <!-- Section for Links and Progress -->
             <div class="bg-white rounded shadow-md p-4 mb-6">
-              <!-- Links Section -->
-              <div class="mb-4">
-                  <h2 class="text-xl font-bold mb-2">My Links</h2>
-                  <ul class="text-gray-600">
-                      <li><a href="createpost.html" class="block py-1">Create Posts</a></li>
-                      <li><a href="#" class="block py-1">My Posts</a></li>
-                      <li><a href="#" class="block py-1">My Favorites</a></li>
-                      <li><a href="#" class="block py-1">My Comments</a></li>
-                  </ul>
-              </div>
-            <!-- Progress Bar for Zig Learning Pathway -->
-            <div class="mb-4">
-            <h2 class="text-xl font-bold mb-2">Zig Learning Pathway</h2>
-            <p class="text-gray-600 mb-2">Your Progress:</p>
-            <!-- Replace the width percentage with actual progress -->
-              <div class="bg-gray-300 h-4 rounded-md overflow-hidden">
-                <div class="bg-yellow-500 h-full" style="width: 50%;"></div>
-              </div>
-              <a href="pathway.html" class="block text-yellow-500 mt-2">Continue Learning</a>
+                <!-- Links Section -->
+                <div class="mb-4">
+                    <h2 class="text-xl font-bold mb-2">My Links</h2>
+                    <ul class="text-gray-600">
+                        <li><a href="createpost.html" class="block py-1">Create Posts</a></li>
+                        <li><a href="#" class="block py-1">My Posts</a></li>
+                        <li><a href="#" class="block py-1">My Favorites</a></li>
+                    </ul>
                 </div>
-          </div>
+                <!-- Progress Bar for Zig Learning Pathway -->
+                <div class="mb-4">
+                    <h2 class="text-xl font-bold mb-2">Zig Learning Pathway</h2>
+                    <p class="text-gray-600 mb-2">Your Progress:</p>
+                    <!-- Replace the width percentage with actual progress -->
+                    <div class="bg-gray-300 h-4 rounded-md overflow-hidden">
+                        <div class="bg-yellow-500 h-full" style="width: 50%;"></div>
+                    </div>
+                    <a href="pathway.html" class="block text-yellow-500 mt-2">Continue Learning</a>
+                </div>
+            </div>
         </aside>
 
-
-        <!-- Main Content -->
-        <div class="w-full lg:w-3/4 p-4">
-            <!-- Updated header text color -->
-            <h1 class="text-3xl font-bold mb-4 header-text text-center">Vote and Create Topics</h1>
-
-            <!-- Voting and Topic Creation Section -->
+        <!-- Voting Section -->
+        <main class="w-full lg:w-3/4 p-4">
             <div class="vote-container">
+                <h1 class="text-3xl font-bold mb-4 header-text text-center">Vote and Create Topics</h1>
+
                 <!-- Sample Topic -->
                 <div class="topic">
                     <span>Create a CLI Tool</span>
@@ -232,16 +236,13 @@
                 <!-- Add more topics and voting buttons as needed -->
 
                 <!-- Topic Creation Form -->
-                <form action="#" method="post">
+                <form action="#" method="post" class="topic-form">
                     <label for="newTopic">Create New Topic:</label>
-                    <input type="text" id="newTopic" name="newTopic" required>
+                    <input type="text" id="newTopic" name="newTopic" class="tag-input" placeholder="Enter your new topic" required>
                     <button type="submit" class="vote-btn">Submit Topic</button>
                 </form>
             </div>
-
-            <!-- News Feed / Blogs Section -->
-            <!-- Your existing blog feed content goes here -->
-        </div>
+        </main>
     </div>
 
     <!-- Footer -->
