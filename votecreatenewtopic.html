@@ -56,7 +56,12 @@
         }
 
         .main-content {
-            width: 75%; /* Adjust the width accordingly */
+            width: 50%; /* Adjust the width accordingly */
+        }
+
+        .create-post-form {
+            width: 25%;
+            padding: 20px;
         }
 
         .sidebar-heading {
@@ -131,21 +136,79 @@
             <li><a href="#" class="nav-link hover:text-gray-300">About</a></li>
             <li><a href="signup.html" class="nav-link hover:text-gray-300">Sign Up</a></li>
             <li><a href="login.html" class="nav-link hover:text-gray-300">Login</a></li>
+
             <!-- Additional navigation links can be added here -->
         </ul>
     </div>
 
-    <div class="flex-grow container mx-auto py-8 flex justify-center">
+    <div class="flex-grow container mx-auto py-8 flex justify-between">
         <!-- Sidebar with User Picture -->
-        <aside class="hidden lg:block w-1/4 sidebar">
-            <!-- Create New Topic Form -->
-            <form action="#" method="post">
-                <h2 class="text-3xl font-bold mb-4 text-center">Create New Topic</h2>
+        <aside class="sidebar">
+            <div class="bg-white rounded shadow-md overflow-hidden mb-6">
+                <!-- Placeholder for user picture -->
+                <img src="images/defaultuserimage.png" alt="User Picture" class="w-full h-auto object-cover">
+            </div>
+
+            <!-- Section for Links and Progress -->
+            <div class="bg-white rounded shadow-md p-4 mb-6">
+                <!-- Links Section -->
+                <div class="mb-4">
+                    <h2 class="text-xl font-bold mb-2">My Links</h2>
+                    <ul class="text-gray-600">
+                        <li><a href="createpost.html" class="block py-1">Create Posts</a></li>
+                        <li><a href="#" class="block py-1">My Posts</a></li>
+                        <li><a href="#" class="block py-1">My Favorites</a></li>
+                    </ul>
+                </div>
+                <!-- Progress Bar for Zig Learning Pathway -->
+                <div class="mb-4">
+                    <h2 class="text-xl font-bold mb-2">Zig Learning Pathway</h2>
+                    <p class="text-gray-600 mb-2">Your Progress:</p>
+                    <!-- Replace the width percentage with actual progress -->
+                    <div class="bg-gray-300 h-4 rounded-md overflow-hidden">
+                        <div class="bg-yellow-500 h-full" style="width: 50%;"></div>
+                    </div>
+                    <a href="pathway.html" class="block text-yellow-500 mt-2">Continue Learning</a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Form for creating a post -->
+            <form class="w-full p-4 bg-white rounded shadow-md" action="#" method="POST">
+                <h1 class="text-3xl font-bold mb-4 text-center">Create a New Post</h1>
+                <!-- Title input -->
+                <div class="mb-4">
+                    <label for="post-title" class="block mb-2">Title:</label>
+                    <input type="text" id="post-title" name="post-title" class="w-full border rounded px-3 py-2" placeholder="Enter your post title" required>
+                </div>
+                <!-- Content input -->
+                <div class="mb-4">
+                    <label for="post-content" class="block mb-2">Content:</label>
+                    <textarea id="post-content" name="post-content" class="w-full border rounded px-3 py-2" placeholder="Write your post content" rows="8" required></textarea>
+                </div>
+                <!-- YouTube video embed input -->
+                <div class="mb-4">
+                    <label for="youtube-link" class="block mb-2">YouTube Video Link:</label>
+                    <input type="text" id="youtube-link" name="youtube-link" class="w-full border rounded px-3 py-2" placeholder="Paste your YouTube video link here">
+                </div>
+                <!-- Submit button -->
+                <div class="mb-4">
+                    <button type="submit" class="mt-2 inline-block px-4 py-2 rounded hover:bg-yellow-500 transition duration-300 create-post-button">Create Post</button>
+                </div>
+            </form>
+        </main>
+
+        <!-- Sidebar for Create New Topic -->
+        <aside class="create-post-form">
+            <form class="bg-white rounded shadow-md p-4" action="#" method="POST">
+                <h2 class="text-xl font-bold mb-4">Create New Topic</h2>
 
                 <!-- Title input -->
                 <div class="mb-4">
                     <label for="newTopicTitle" class="block mb-2">Title:</label>
-                    <input type="text" id="newTopicTitle" name="newTopicTitle" class="w-full border rounded px-3 py-2" placeholder="Enter your topic title" required>
+                    <input type="text" id="newTopicTitle" name="newTopicTitle" class="w-full border rounded px-3 py-2" placeholder="Enter the title of your topic" required>
                 </div>
 
                 <!-- Description input -->
@@ -170,33 +233,6 @@
                 </div>
             </form>
         </aside>
-
-        <!-- Main Content -->
-        <main class="flex-grow container mx-auto py-8 flex justify-center main-content">
-            <!-- Form for creating a post -->
-            <form class="w-full lg:w-3/4 p-4 bg-white rounded shadow-md" action="#" method="POST">
-                <h1 class="text-3xl font-bold mb-4 text-center">Create a New Post</h1>
-                <!-- Title input -->
-                <div class="mb-4">
-                    <label for="post-title" class="block mb-2">Title:</label>
-                    <input type="text" id="post-title" name="post-title" class="w-full border rounded px-3 py-2" placeholder="Enter your post title" required>
-                </div>
-                <!-- Content input -->
-                <div class="mb-4">
-                    <label for="post-content" class="block mb-2">Content:</label>
-                    <textarea id="post-content" name="post-content" class="w-full border rounded px-3 py-2" placeholder="Write your post content" rows="8" required></textarea>
-                </div>
-                <!-- YouTube video embed input -->
-                <div class="mb-4">
-                    <label for="youtube-link" class="block mb-2">YouTube Video Link:</label>
-                    <input type="text" id="youtube-link" name="youtube-link" class="w-full border rounded px-3 py-2" placeholder="Paste your YouTube video link here">
-                </div>
-                <!-- Submit button -->
-                <div class="mb-4">
-                    <button type="submit" class="mt-2 inline-block px-4 py-2 rounded hover:bg-yellow-500 transition duration-300 create-post-button">Create Post</button>
-                </div>
-            </form>
-        </main>
     </div>
 
     <!-- Footer -->
@@ -218,4 +254,3 @@
 </body>
 
 </html>
-
