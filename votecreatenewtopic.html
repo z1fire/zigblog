@@ -237,21 +237,34 @@
 
                 <!-- Topic Creation Form -->
 <form action="#" method="post" class="topic-form">
-    <label for="newTopic">Create New Topic:</label>
-    <input type="text" id="newTopic" name="newTopic" class="tag-input" placeholder="Enter your new topic" required>
+    <h2 class="text-xl font-bold mb-2">Create New Topic:</h2>
+
+    <!-- Title input -->
+    <div class="mb-4">
+        <label for="newTopicTitle" class="block mb-2">Title:</label>
+        <input type="text" id="newTopicTitle" name="newTopicTitle" class="w-full border rounded px-3 py-2" placeholder="Enter your topic title" required>
+    </div>
+
+    <!-- Description input -->
+    <div class="mb-4">
+        <label for="newTopicDescription" class="block mb-2">Description:</label>
+        <textarea id="newTopicDescription" name="newTopicDescription" class="w-full border rounded px-3 py-2" placeholder="Enter a brief description of your topic" rows="4" required></textarea>
+    </div>
 
     <!-- Category Selection -->
     <div class="mb-4">
-        <label for="category" class="block mb-2">Select Category:</label>
-        <select id="category" name="category" class="w-full border rounded px-3 py-2" required>
+        <label for="newTopicCategory" class="block mb-2">Select Category:</label>
+        <select id="newTopicCategory" name="newTopicCategory" class="w-full border rounded px-3 py-2" required>
             <option value="cli">CLI Tools</option>
             <option value="web">Web Development</option>
             <!-- Add more categories as needed -->
         </select>
     </div>
 
-    <button type="submit" class="vote-btn">Submit Topic</button>
+    <!-- Submit Topic Button -->
+    <button type="submit" class="mt-2 inline-block px-4 py-2 rounded hover:bg-yellow-500 transition duration-300 create-post-button">Submit Topic</button>
 </form>
+
 
             </div>
         </main>
